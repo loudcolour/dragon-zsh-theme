@@ -41,7 +41,8 @@ function get_right_prompt() {
 }
 
 # DRAGON_DATE="$CYAN%W%t"
-DRAGON_DATE="$CYAN%W-%*"
+#DRAGON_DATE="$CYAN%W-%*"
+DRAGON_DATE="$CYAN%D{%FT%H:%M:%S%z}"
 DRAGON_USER="%n"
 DRAGON_SEPARATOR="$RESET@"
 DRAGON_MACHINE="$MAGENTA%m"
