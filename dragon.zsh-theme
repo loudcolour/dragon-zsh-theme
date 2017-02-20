@@ -57,7 +57,7 @@ function get_prompt() {
     if [[ ${RETVAL} -ne 0 ]]; then
         DRAGON_PROMPT="$RED→ "
     else
-        DRAGON_PROPMT="$CYAN→ "
+        DRAGON_PROMPT="$CYAN→ "
     fi
     DRAGON_PROMPT="$DRAGON_PROMPT$RESET"
     
