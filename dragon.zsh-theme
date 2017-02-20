@@ -40,22 +40,31 @@ function get_right_prompt() {
     fi
 }
 
-# DRAGON_DATE="$CYAN%W%t"
-#DRAGON_DATE="$CYAN%W-%*"
-DRAGON_DATE="$CYAN%D{%FT%H:%M:%S%z}"
-DRAGON_USER="%n"
-DRAGON_SEPARATOR="$RESET@"
-DRAGON_MACHINE="$MAGENTA%m"
-DRAGON_DIRECTORY="$YELLOW%~"
-DRAGON_PROMPT="$CYAN→ $RESET"
+function get_prompt() {
+    RETVAL=$?
+    if [[ "$USER" == "root" ]]; then
+        DRAGON_PREFIX="$RED⬡"
+    else
+        DRAGON_PREFIX="$GREEN⬢"
+    fi
 
-if [[ "$USER" == "root" ]]; then
-    DRAGON_PREFIX="$RED⬡"
-else
-    DRAGON_PREFIX="$GREEN⬢"
-fi
+    DRAGON_DATE="$CYAN%D{%FT%H:%M:%S%z}"
+    DRAGON_USER="%n"
+    DRAGON_SEPARATOR="$RESET@"
+    DRAGON_MACHINE="$MAGENTA%m"
+    DRAGON_DIRECTORY="$YELLOW%~"
 
-PROMPT="$DRAGON_PREFIX $DRAGON_USER$DRAGON_SEPARATOR$DRAGON_MACHINE: $DRAGON_DIRECTORY $DRAGON_DATE
+    if [[ ${RETVAL} -ne 0 ]]; then
+        DRAGON_PROMPT="$RED→ "
+    else
+        DRAGON_PROPMT="$CYAN→ "
+    fi
+    DRAGON_PROMPT="$DRAGON_PROMPT$RESET"
+    
+    echo "$DRAGON_PREFIX $DRAGON_USER$DRAGON_SEPARATOR$DRAGON_MACHINE: $DRAGON_DIRECTORY $DRAGON_DATE
 $DRAGON_PROMPT"
+}
+
+PROMPT='$(get_prompt)'
 RPROMPT='$(get_right_prompt)'
 
