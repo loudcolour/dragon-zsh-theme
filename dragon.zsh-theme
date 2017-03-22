@@ -42,7 +42,7 @@ function get_right_prompt() {
 
 function get_prompt() {
     RETVAL=$?
-    if [[ "$USER" == "root" ]]; then
+    if [[ "$UID" == 0 ]]; then
         DRAGON_PREFIX="$RED⬡"
     else
         DRAGON_PREFIX="$GREEN⬢"
