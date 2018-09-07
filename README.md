@@ -5,11 +5,10 @@ dragon is a minimalistic zsh prompt theme for git users
 ## Feature
 
 *   Pretty prefix prompt signature
-*   Pretty color
-*   Current directory
-*   Time stamp
-*   Git prompt info
-*   Git status info
+*   Shows full path of current directory
+*   ISO 8601 Time stamp
+*   Shows git status/prompt info
+*   Indicates local/ssh
 
 ## License
 
