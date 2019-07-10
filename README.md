@@ -1,6 +1,6 @@
-# dragon-zsh-theme
+# zsh-theme
 
-dragon is a minimalistic zsh prompt theme for git users
+Forked from [dragon-zsh-theme](https://github.com/perillamint/dragon-zsh-theme), which is a minimalistic zsh prompt theme for git users.
 
 ## Feature
 
