@@ -9,7 +9,7 @@ WHITE="%{$fg_bold[white]%}"
 RESET="%{$reset_color%}"
 
 # Format for git_prompt_info()
-ZSH_THEME_GIT_PROMPT_PREFIX="ᚠ "
+ZSH_THEME_GIT_PROMPT_PREFIX=""
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
 ZSH_THEME_GIT_PROMPT_DIRTY="$YELLOW*$RESET"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
